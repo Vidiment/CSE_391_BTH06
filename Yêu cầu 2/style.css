@@ -1,0 +1,15 @@
+.heading{
+    width: 70%;
+    height: 150px;
+}
+
+.heading-color{
+    color: blue;
+    font-size: 25px;
+    font-weight: 700;
+}
+
+.line{
+    display: inline;
+    color: orange;
+}
