@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+   <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+    <div class="app">
+        <div class="clock"></div>
+        <div class="title" style="color: red;"></div>
+    </div>
+    <script>
+        const title = document.querySelector('.title')
+
+        setInterval(() => {
+            const date = new Date()
+            let hours = date.getHours()
+            let minutes = date.getMinutes()
+            let seconds = date.getSeconds()
+
+            title.style.color = title.style.color === 'red' ? '#000' : 'red'
+
+            if (hours >= 0 && hours < 12) {
+                title.innerText = 'Chào buổi sáng'
+                title.style.fontSize = '16px'
+            }
+            if (hours > 12 && hours < 17) {
+                title.innerText = 'Chào buổi chiều'
+                title.style.fontSize = '20px'
+            } else {
+                title.innerText = 'Chào buổi tối'
+                title.style.fontSize = '24px'
+            }
+
+            document.querySelector('.clock').innerText = `${hours} : ${minutes} : ${seconds}`
+        }, 1000)
+    </script>
+</body>
+
+</html>
